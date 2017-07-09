@@ -1,0 +1,95 @@
+header {
+	color:white;
+	height:100vh;
+	min-height:450px;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:center;
+	background-color:$dark-blue;
+	text-shadow: 2px 2px 0 $darkest-blue;
+	padding:25px;
+	@media (max-width:768px) {
+		min-height:550px;
+	}
+	@media (max-width:600px) {
+		min-height:600px;
+	}
+	@media (max-width:480px) {
+		min-height:650px;
+	}
+	@media (max-width:400px) {
+		min-height:700px;
+	}
+	@media (max-width:320px) {
+		min-height:750px;
+	}
+	h1 {
+		font-size:85px;
+		text-shadow: 5px 5px 0 $darkest-blue;
+		font-weight:400;
+		@media (max-width:768px) {
+			font-size:75px;
+		}
+		@media (max-width:480px) {
+			font-size:60px;
+		}
+	}
+	h2 {
+		text-shadow: 3px 3px 0 $darkest-blue;
+		margin:25px 0;
+	}
+	button {
+		color:white;
+		outline:3px solid white;
+		margin-bottom:10px;
+		text-shadow: 3px 3px 0 $darkest-blue;
+		&:hover, &:focus {
+			background-color:white;
+			color:$darkest-blue;
+			outline:none;
+			box-shadow:6px 6px 0 $darkest-blue;
+			text-shadow:none;
+		}
+	}
+}
+
+form {
+	max-width:550px;
+	margin:0 auto;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:space-around;
+	.runtime, .genre {
+		padding:15px;
+	}
+	.runtime {
+		position:relative;
+		z-index:1;
+	}
+	label:not([name=minutes]) {
+		padding-right:10px;
+		@media (max-width:600px) {
+			display:block;
+			padding-bottom:10px;
+		}
+	}
+	label[name=minutes] {
+		position:absolute;
+		text-align:right;
+		padding:10px 15px;
+		right:15px;
+		top:15px;
+		overflow:hidden;
+		z-index:2;
+		@media (max-width:600px) {
+			top:45px;
+		}
+	}
+	input[type=number] {
+		text-align:left;
+		z-index:1;
+		padding-right:95px;
+	}
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Time for a Movie?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,600" rel="stylesheet">
+	<link type="image/png" href="images/favicon.png" rel="icon">
+	<link rel="apple-touch-icon" href="images/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="styles/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<script id="myTemplate" type="x-handlebars-template">
+		<div class="single-movie clearfix">
+			<h3 class="rating">{{vote_average}}/10</h3>
+			<a href="http://www.imdb.com/title/{{imdb_id}}" target="_blank">
+				<div class="movie-image" style="background-image:url(https://image.tmdb.org/t/p/w300_and_h450_bestv2{{poster_path}})">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{poster_path}}" alt="{{title}} - Movie Poster">
+				</div>
+			</a>
+			<div class="movie-text">
+				<h2 class="title">{{title}} ({{release_date}})</h2>
+				<h3 class="runtime">{{runtime}} minutes</h3>
+				<p class="overview">{{overview}}</p>
+				<a href="http://www.imdb.com/title/{{imdb_id}}" target="_blank">More Info</a>
+			</div>
+		</div>
+	</script>
+</head>
+<body>
+	<header id="top">
+		<div class="container animated zoomIn">
+			<h1>Time for a Movie?</h1>
+			<h2>Choose a genre and enter how much time you have!</h2>
+			<form action="">
+				<div class="genre">
+					<label for="genre">Genre:</label>
+					<select name="genre" id="genre" required>
+						<option value="28">Action</option>
+						<option value="12">Adventure</option>
+						<option value="16">Animation</option>
+						<option value="35">Comedy</option>
+						<option value="80">Crime</option>
+						<option value="99">Documentary</option>
+						<option value="18">Drama</option>
+						<option value="10751">Family</option>
+						<option value="14">Fantasy</option>
+						<option value="10679">Foreign</option>
+						<option value="36">History</option>
+						<option value="27">Horror</option>
+						<option value="10402">Music</option>
+						<option value="9648">Mystery</option>
+						<option value="10749">Romance</option>
+						<option value="878">Science Fiction</option>
+						<option value="10770">TV Movie</option>
+						<option value="53">Thriller</option>
+						<option value="10752">War</option>
+						<option value="37">Western</option>
+					</select>
+				</div>
+				<div class="runtime">
+					<label for="runtime">Time:</label>
+					<input type="number" name="runtime" id="runtime" required>
+					<label for="runtime" name="minutes">minutes</label>
+				</div>
+				<button type="submit" class="button submit">Show Me The Movies!</button>
+			</form>
+			<button type="submit" class="button restart">Try Again</button>
+		</div>
+	</header>
+	<main id="results">
+		<div class="container">
+			<div id="success"></div>
+			<div id="error"></div>
+			<button type="submit" class="button restart">Try Again</button>
+			<div class="footer-right"><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20'Time%20for%20a%20Movie'%20to%20search%20for%20movies%20by%20runtime!&url=http://kristenkriens.com/time-for-a-movie" target="_blank" data-size="large">Tweet</a></div>
+		</div>
+	</main>
+	<footer>
+		<div class="container clearfix">
+			<p>Designed and Coded by <a href="http://kristenkriens.com/" target="_blank">Kristen Kriens</a> using <a href="https://www.themoviedb.org">The Movie Database (TMDb)</a> API. Popcorn image by CharlesLeon on <a rel="nofollow" target="_blank" href="http://www.vecteezy.com">Vecteezy</a>.</p>
+		</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+	<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

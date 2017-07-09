@@ -1,0 +1,125 @@
+main {
+	display:none;
+	background-color:$light-blue;
+	padding:50px 0 215px 0;
+	border-top:3px solid white;
+	min-height:calc(100vh - 48px);
+	background-image:url(../images/popcorn.png);
+	background-position:center bottom;
+	background-repeat:no-repeat;
+	@media (max-width:650px) {
+		padding-top:25px;
+	}
+	button {
+		background-color:$dark-blue;
+		color:white;
+		text-shadow: 3px 3px 0 $darkest-blue;
+		@media (max-width:480px) {
+			margin:15px;
+		}
+		&:hover, &:focus {
+			background-color:white;
+			color:$dark-blue;
+			text-shadow:none;
+			box-shadow:5px 5px 0 $dark-blue;
+		}
+	}
+}
+
+#success {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	.single-movie {
+		background-color:white;
+		width:calc(33.33% - 50px);
+		margin:25px;
+		box-shadow:7px 7px 0px $medium-blue;
+		position:relative;
+		@media (max-width:940px) {
+			width:calc(50% - 50px);
+		}
+		@media (max-width:650px) {
+			width:100%;
+			padding-bottom:0;
+		}
+		h3.rating {
+			position:absolute;
+			top:0;
+			right:0;
+			background-color:$medium-red;
+			padding:10px 15px;
+			font-weight:400;
+			color:white;
+			text-shadow:2px 2px 0 $dark-red;
+		}
+		.movie-text {
+			padding:15px;
+			@media (min-width:481px) and (max-width:650px) {
+				text-align:left;
+				width:50%;
+				float:left;
+			}
+			@media (max-width:480px) {
+				padding-top:60px;
+			}
+				h2.title {
+				font-weight:400;
+				padding-bottom:5px;
+			}
+			.overview {
+				padding-top:15px;
+				opacity:0.75;
+				padding-bottom:75px;
+			}
+			a {
+				text-transform:uppercase;
+				position:absolute;
+				bottom:15px;
+				left:50%;
+				transform:translate(-50%,0);
+				padding:15px 20px;
+				width:calc(100% - 30px);
+				font-size:18px;
+				background-color:$medium-red;
+				color:white;
+				text-align:center;
+				text-shadow:2px 2px 0 $dark-red;
+				transition:0.5s background-color;
+				@media (min-width:481px) and (max-width:650px) {
+					width:calc(50% - 30px);
+					left:15px;
+					transform:translate(0,0);
+				}
+				&:hover {
+					background-color:$medium-blue;
+					text-shadow:2px 2px 0 $darkest-blue;
+				}
+			}
+		}
+		.movie-image {
+			background-size:cover;
+			background-position:center center;
+			background-repeat:no-repeat;
+			@media (min-width:481px) and (max-width:650px) {
+				width:50%;
+				float:right;
+				height:100%;
+			}
+			@media (max-width:480px) {
+				display:none;
+			}
+			img {
+				width:100%;
+				margin-bottom:-4px;
+				@media (min-width:481px) and (max-width:650px) {
+					visibility:hidden;
+				}
+			}
+		}
+	}
+}
+
+#error {
+	padding:25px;
+}
